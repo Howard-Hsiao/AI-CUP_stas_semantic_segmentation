@@ -36,9 +36,9 @@ data_root = 'ckpt/htc_cbv2_swin_base22k_patch4_window7_mstrain_400-1400_giou_4co
 >[origin pretrained model](https://github.com/CBNetwork/storage/releases/download/v1.0.0/htc_cbv2_swin_base22k_patch4_window7_mstrain_400-1400_giou_4conv1f_adamw_20e_coco.pth.zip)   
 >[origin config](https://github.com/VDIGPKU/CBNetV2/blob/main/configs/cbnet/htc_cbv2_swin_base_patch4_window7_mstrain_400-1400_giou_4conv1f_adamw_20e_coco.py)     
    
-unzip competition models and configs folder and name it **work_dirs** (AI-CUP/work_dirs)
+unzip competition models and configs folder and name it **work_dirs** (work_dirs)
 You need to complete all previous training or download the competition model, put the checkpoint file to the work_dirs folder and name it AI-CUP_semantic_segmentation.pth
->[competition models checkpoints](https://www.dropbox.com/s/kovxf70m9weul8q/AI-CUP_semantic_segmentation.pth?dl=0)
+>[competition models checkpoints](https://www.dropbox.com/s/kovxf70m9weul8q/AI-CUP_semantic_segmentation.pth?dl=0)  
 >[competition segmentation config](configs/cbnet/AI_CUP_SEG.py)
 
 ### Data and Annotations
@@ -55,7 +55,7 @@ data
         `-- train_images...
 ```
 
-Then run **[python convert_STAS.py](python convert_STAS.py)**. The data folder is defined on the line 249 of this python script. you can modify it if needed. After executing the script, **coco** and **custom** folder should appear in the directory
+Then run **[python convert_STAS.py](python convert_STAS.py)**. The data folder is defined on the line 245 of this python script. you can modify it if needed. After executing the script, **coco** and **custom** folder should appear in the directory
 ```
 data
 `-- SEG_Train_Datasets
@@ -152,7 +152,7 @@ python tools/test.py \
     --show --show-dir output \
     --show-score-thr 0.05 --coco
 ```
-You can modify **--show-case** parameter to change the output folder. If you use the setting above, the result would be store at the /output/seg_result/
+You can modify **--show-dir** parameter to change the output folder. If you use the setting above, the result would be store at the /output/seg_result/
 
 ## Other Links
 > **Original CBNet**: See [CBNet: A Novel Composite Backbone Network Architecture for Object Detection](https://github.com/VDIGPKU/CBNet).    
